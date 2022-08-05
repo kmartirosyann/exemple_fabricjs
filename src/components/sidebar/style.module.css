@@ -1,0 +1,19 @@
+.sidebar{
+    display: flex;
+    height: calc(100vh - 60px);
+    flex-direction: column;
+    background: #404040;  
+}
+
+.item{  
+    cursor: pointer;
+    padding: 18px;
+    border-bottom: 1px solid #000;
+    color: aliceblue;
+}
+
+.item:hover{
+    background: #66646480; 
+    border-bottom: 2px solid;
+}
+

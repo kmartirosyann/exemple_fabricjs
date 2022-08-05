@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import { FC, useState } from 'react';
+import Container from './components/container';
+import NavBar from './components/navBar';
+import Sidebar from './components/sidebar';
 import './App.css';
 
-function App() {
+
+
+const App: FC = () => {
+  const [fontSize, setFontSize] = useState(0);
+  const [posidion,setPosition] = useState('');
+  
+  const handelChooseText =(size:number)=>{
+    setFontSize(size);
+  };
+
+  const handlePosition =(posXY:string)=>{
+     setPosition(posXY);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <NavBar  handlePosition={handlePosition} />
+      <section className='content'>
+        <Sidebar handelChooseText={handelChooseText}/>
+        <Container size={fontSize} position={posidion}/>
+      </section>
     </div>
   );
 }
