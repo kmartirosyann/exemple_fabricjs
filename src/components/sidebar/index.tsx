@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { COOSE_TEXT_FONTSIZE } from '../../context/actions';
+import { MovieContext } from '../../context/MovieContext';
 import classes from './style.module.css';
 
-type Props = {
-    handelChooseText: (fontSize: number) => void;
-}
 
-const Sidebar = ({ handelChooseText }: Props) => {
+const Sidebar = () => {
+    const { dispatch } = useContext(MovieContext);
 
     const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-        const { id } = e.target as any
-        return handelChooseText(Number(id));
-    }
+        const { id } = e.target as HTMLElement
+
+        dispatch({
+            type: COOSE_TEXT_FONTSIZE,
+            payload: id,
+        });
+    };
 
     return (
         <main className={classes.sidebar}>
@@ -19,6 +23,6 @@ const Sidebar = ({ handelChooseText }: Props) => {
             <h5 className={classes.item} id='28' onClick={handleClick}>Add headline</h5>
         </main>
     )
-}
+};
 
 export default Sidebar
