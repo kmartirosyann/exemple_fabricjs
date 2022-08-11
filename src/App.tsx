@@ -1,5 +1,5 @@
 
-import Container from './components/canvas';
+import Canvas from './components/canvas';
 import NavBar from './components/navBar';
 import Sidebar from './components/sidebar';
 import { MovieProvider } from './context/MovieContext';
@@ -14,7 +14,7 @@ const App = () => {
         <NavBar />
         <section className='content'>
           <Sidebar />
-          <Container />
+          <Canvas />
         </section>
       </div>
     </MovieProvider>

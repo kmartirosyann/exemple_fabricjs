@@ -4,7 +4,7 @@ import * as actionTypes from './actions';
 
 
 const initialState: Context = {
-  value: '',
+  value: 'center',
   fontSize: 0,
 };
 
