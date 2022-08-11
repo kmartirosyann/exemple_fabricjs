@@ -37,9 +37,9 @@ export const useCanvas = (posXY: DOMRect | undefined) => {
     const rect = text.getBoundingRect();
 
 
-    const position = useCallback((style: string) => {
+    const position = useCallback((val: string) => {
         if (!posXY) return
-        switch (style) {
+        switch (val) {
             case "left": {
                 initialeStyle.left = 0;
                 return text.set(initialeStyle);
